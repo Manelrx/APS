@@ -3,17 +3,29 @@
 $arquivo = fopen('metadados_fotos_APS_20212.csv', 'r');
 $header = fgetcsv($arquivo, 1000, ",");
 
-$teste = array();
-
 while ($row = fgetcsv($arquivo, 1000, ",")) {
     $nota[] = array_combine($header, $row);
 }
 
-
-
-foreach($nota as $t){
-    $teste1 = implode(",", $t);
-    array_push($teste, "$teste1 \n" );
+function selection_sort($lista){
+    $n = count($lista);
+    for ($i = 0; $i < $n -2; $i++){
+        $menor_indice = $i;
+        for ($j = $i; $j < $n-1; $j++){
+            if($lista[$j]['file_size'] < $lista[$menor_indice]['file_size']){
+                $menor_indice = $j;
+            }
+        } 
+        if ($lista[$i]['file_size'] > $lista[$menor_indice]['file_size']){
+            $aux = $lista[$i];
+            $lista[$i] = $lista[$menor_indice];
+            $lista[$menor_indice] = $aux;
+        }
+    }
 }
+print_r($nota[0]);
+/* $inicio = microtime(true);
+selection_sort($nota);
+$fim = microtime(true);
 
-echo("$teste[1] $teste[2]");
+echo $inicio - $fim; */
