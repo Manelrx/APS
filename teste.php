@@ -1,12 +1,10 @@
 <?php
-
 $arquivo = fopen('metadados_fotos_APS_20212.csv', 'r');
 $header = fgetcsv($arquivo, 1000, ",");
 
 while ($row = fgetcsv($arquivo, 1000, ",")) {
     $nota[] = array_combine($header, $row);
 }
-
 function selection_sort($lista){
     $n = count($lista);
     for ($i = 0; $i < $n -2; $i++){
@@ -22,10 +20,9 @@ function selection_sort($lista){
             $lista[$menor_indice] = $aux;
         }
     }
+    return $lista;
 }
-print_r($nota[0]);
-/* $inicio = microtime(true);
-selection_sort($nota);
+$inicio = microtime(true);
+$nota = selection_sort($nota);
 $fim = microtime(true);
-
-echo $inicio - $fim; */
+echo $fim - $inicio;
