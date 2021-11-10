@@ -1,8 +1,8 @@
 <?php
 $arquivo = fopen('metadados_fotos_APS_20212.csv', 'r');
-$header = fgetcsv($arquivo, 1000, ",");
+/* $header = fgetcsv($arquivo, 1000, ",");
 
-print_r($header);
+print_r($header); */
 /* while ($row = fgetcsv($arquivo, 1000, ",")) {
     $nota[] = array_combine($header, $row);
 }

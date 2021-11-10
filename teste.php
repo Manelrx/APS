@@ -1,8 +1,7 @@
 <?php
 $arquivo = file('teste.csv');
-
-
-function selection_sort($lista){
+print_r($arquivo);
+/* function selection_sort($lista){
     $n = count($lista);
     for ($i = 0; $i < $n -2; $i++){
         $menor_indice = $i;
@@ -22,4 +21,25 @@ function selection_sort($lista){
 $inicio = microtime(true);
 $nota = selection_sort($arquivo);
 $fim = microtime(true);
-echo $fim - $inicio;
+echo $fim - $inicio; */
+
+
+/* function file_size ($texto){
+    $x = 0;
+    $valor_procurado = array();
+    $lista = str_split($texto);
+    for ($i = 0; $i > count($lista);$i++){
+        if($lista[$i] == ','){
+            $x++;
+        }
+        if($x == 4 && $lista[$i] != ',' ){
+            array_push($valor_procurado, $lista[$i]);
+        }
+        foreach ($lista as $b){
+            $y = implode($b);
+        }
+        return $y;
+    }
+}
+$teste = file_size($arquivo[0]);
+echo $teste; */
