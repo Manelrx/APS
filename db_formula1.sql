@@ -1,3 +1,4 @@
+create database formula_1;
 CREATE TABLE IF NOT EXISTS tb_paises(
   cod_pais CHAR(3) PRIMARY KEY NOT NULL,
   nome_pais VARCHAR(45) NOT NULL);
