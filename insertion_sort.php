@@ -30,11 +30,3 @@ $fim = microtime(true);
 
 $tempo = $fim - $inicio;
 
-echo $tempo . "\n";
-foreach ($nota as $a) {
-    $y = implode(", ", $a);
-    array_push($x,"$y\n");
-}
-foreach($x as $b){
-    echo $b;
-}
