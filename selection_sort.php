@@ -1,29 +1,32 @@
 <?php
-$arquivo = fopen('metadados_fotos_APS_20212.csv', 'r');
-/* $header = fgetcsv($arquivo, 1000, ",");
+include('CSVs.php');
 
-print_r($header); */
-/* while ($row = fgetcsv($arquivo, 1000, ",")) {
-    $nota[] = array_combine($header, $row);
-}
-function selection_sort($lista){
+function selection_sort($lista, $tipo_arquivo){
     $n = count($lista);
-    for ($i = 0; $i < $n -2; $i++){
+    for ($i = 0; $i < $n -1; $i++){
         $menor_indice = $i;
-        for ($j = $i; $j < $n-1; $j++){
-            if($lista[$j]['file_size'] < $lista[$menor_indice]['file_size']){
+        for ($j = $i; $j < $n; $j++){
+            if($lista[$j][$tipo_arquivo] < $lista[$menor_indice][$tipo_arquivo]){
                 $menor_indice = $j;
             }
         } 
-        if ($lista[$i]['file_size'] > $lista[$menor_indice]['file_size']){
+        if ($lista[$i][$tipo_arquivo] > $lista[$menor_indice][$tipo_arquivo]){
             $aux = $lista[$i];
             $lista[$i] = $lista[$menor_indice];
             $lista[$menor_indice] = $aux;
         }
+        clearstatcache();
     }
     return $lista;
 }
 $inicio = microtime(true);
-$nota = selection_sort($nota);
+$teste = selection_sort($teste100, 4);
 $fim = microtime(true);
-echo $fim - $inicio; */
+echo $fim - $inicio;
+
+$guardar = fopen('selection.csv','w');
+
+foreach($teste as $linha){
+    fputcsv($guardar, $linha);
+}
+fclose($guardar);
