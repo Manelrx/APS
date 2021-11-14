@@ -11,6 +11,7 @@ function selection_sort($lista, $tipo_arquivo){
             }
         } 
         if ($lista[$i][$tipo_arquivo] > $lista[$menor_indice][$tipo_arquivo]){
+
             $aux = $lista[$i];
             $lista[$i] = $lista[$menor_indice];
             $lista[$menor_indice] = $aux;
@@ -29,4 +30,4 @@ $guardar = fopen('selection.csv','w');
 foreach($teste as $linha){
     fputcsv($guardar, $linha);
 }
-fclose($guardar);
+fclose($guardar); 

@@ -4,6 +4,8 @@ $arquivoCsv = fopen('metadados_fotos_APS_20212.csv', 'r');
 $teste100 = array();
 $teste1000 = array();
 $teste10000 = array();
+$teste20000 = array();
+$teste50000 = array();
 $arquivo = array();
 $id_file_size = array();
 $id_dateTime = array();
@@ -21,4 +23,10 @@ for($i= 0; $i < 1000; $i++){
 }
 for($i= 0; $i < 10000; $i++){
     array_push($teste10000, $arquivo[$i]);
+}
+for($i= 0; $i < 20000; $i++){
+    array_push($teste20000, $arquivo[$i]);
+}
+for($i= 0; $i < 50000; $i++){
+    array_push($teste50000, $arquivo[$i]);
 }
