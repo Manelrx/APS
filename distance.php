@@ -13,12 +13,18 @@ function distance($lat1, $lon1, $lat2, $lon2)
     return $km;
 }
 
-function verificaKm($lat, $long, $lista)
+function verificaKm($id, $distance, $lista)
 {
     $lugaresProximos = array();
+    foreach ($lista as $linha){
+        if ($linha[0] == $id){
+            $lat = $linha[5];
+            $long = $linha[6];
+        }
+    } 
     for ($i = 1; $i < count($lista); $i++) {
         $km = distance($lat, $long, $lista[$i][5], $lista[$i][6]);
-        if ($km < 500) {
+        if ($km < $distance && $i != $id) {
             $i_km = array($i, $km);
             array_push($lugaresProximos, $i_km);
         }
@@ -26,13 +32,10 @@ function verificaKm($lat, $long, $lista)
     return $lugaresProximos;
 }
 
-$teste = verificaKm(-0.326732, -61.6269150, $arquivo);
+
+
+$teste = verificaKm(2, 40, $teste100);
 print_r($teste);
-
-
-/* $teste = distance(-7.4179100,-56.5379390, -0.3267320, -61.6269150, "K");
-
-echo $teste; */
 
 /* function codexworldGetDistanceOpt($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo)
 {

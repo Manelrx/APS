@@ -1,4 +1,10 @@
 <?php
+define("AZUL", "\033[34m");
+define("VERMELHO", "\033[31m");
+define("VERDE", "\033[32m");
+define("AMARELO", "\033[1;33m");
+define("ROXO", "\033[0;35m");
+define("PADRAO", "\033[0m");
 
 $arquivoCsv = fopen('metadados_fotos_APS_20212.csv', 'r');
 $teste100 = array();
