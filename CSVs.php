@@ -36,3 +36,20 @@ for($i= 0; $i < 20000; $i++){
 for($i= 0; $i < 50000; $i++){
     array_push($teste50000, $arquivo[$i]);
 }
+
+function escolherLista($listaEscolhida){
+    global $teste100, $teste1000, $teste10000, $teste20000, $teste50000, $teste50000, $arquivo;
+    if ($listaEscolhida == 1) {
+        $lista = $teste100;
+    } elseif ($listaEscolhida == 2) {
+        $lista = $teste1000;
+    } elseif ($listaEscolhida == 3) {
+        $lista = $teste10000;
+    } elseif ($listaEscolhida == 4) {
+        $lista = $teste20000;
+    } elseif ($listaEscolhida == 5) {
+        $lista = $teste50000;
+    } else {
+        $lista = $arquivo;
+    }
+}

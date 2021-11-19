@@ -33,9 +33,30 @@ function verificaKm($id, $distance, $lista)
 }
 
 
-
 $teste = verificaKm(2, 40, $teste100);
-print_r($teste);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* function codexworldGetDistanceOpt($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo)
 {
