@@ -1,4 +1,4 @@
-<?php
+<?php  //PARA EXECUTAR O PROGRAMA UTILIZER O PROGRAMA.PHP
 define("AZUL", "\033[34m");
 define("VERMELHO", "\033[31m");
 define("VERDE", "\033[32m");
@@ -7,6 +7,7 @@ define("ROXO", "\033[0;35m");
 define("PADRAO", "\033[0m");
 
 $arquivoCsv = fopen('metadados_fotos_APS_20212.csv', 'r');
+
 $teste100 = array();
 $teste1000 = array();
 $teste10000 = array();

@@ -1,4 +1,4 @@
-<?php
+<?php   //PARA EXECUTAR O PROGRAMA UTILIZER O PROGRAMA.PHP
 function selection_sort($lista, $tipo_arquivo){
     $n = count($lista);
     for ($i = 0; $i < $n -1; $i++){

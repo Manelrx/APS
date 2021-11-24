@@ -1,19 +1,20 @@
-<?php
-function quicksort(&$lista, $left, $right)
+<?php     //PARA EXECUTAR O PROGRAMA UTILIZER O PROGRAMA.PHP
+function quicksort(&$lista, $left, $right, $tipoDeDado)
 {
     if ($left < $right) {
-        $pivot = particao($lista, $left, $right);
-        quicksort($lista, $left, $pivot - 1);
-        quicksort($lista, $pivot + 1, $right);
+        $pivot = particao($lista, $left, $right, $tipoDeDado);
+        quicksort($lista, $left, $pivot - 1, $tipoDeDado);
+        quicksort($lista, $pivot + 1, $right, $tipoDeDado);
     }
+    
 }
 
-function particao(&$lista, $left, $right)
+function particao(&$lista, $left, $right, $tipoDeDado)
 {
     $i = $left;
-    $pivo = $lista[$right][4];
+    $pivo = $lista[$right][$tipoDeDado];
     for ($x = $left; $x <= $right; $x++) {
-        if ($lista[$x][4] < $pivo) {
+        if ($lista[$x][$tipoDeDado] < $pivo) {
             $temp = $lista[$i];
             $lista[$i] = $lista[$x];
             $lista[$x] = $temp;

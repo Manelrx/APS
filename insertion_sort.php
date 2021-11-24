@@ -1,4 +1,4 @@
-<?php
+<?php   //PARA EXECUTAR O PROGRAMA UTILIZER O PROGRAMA.PHP
 
 function insertion_sort($lista, $tipo_arquivo)
 {
@@ -14,6 +14,8 @@ function insertion_sort($lista, $tipo_arquivo)
         $lista[$j+1] = $chave;
         clearstatcache();
     }
+    array_unshift($lista, $lista[count($lista)-1]);
+    unset($lista[count($lista)-1]);
     return $lista;
 }
 

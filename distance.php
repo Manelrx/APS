@@ -1,5 +1,4 @@
-<?php
-/* include('CSVs.php'); */
+<?php    //PARA EXECUTAR O PROGRAMA UTILIZER O PROGRAMA.PHP
 function distance($lat1, $lon1, $lat2, $lon2)
 {
 
