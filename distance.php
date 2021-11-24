@@ -1,5 +1,5 @@
 <?php
-include('CSVs.php');
+/* include('CSVs.php'); */
 function distance($lat1, $lon1, $lat2, $lon2)
 {
 
@@ -20,6 +20,7 @@ function verificaKm($id, $distance, $lista)
         if ($linha[0] == $id){
             $lat = $linha[5];
             $long = $linha[6];
+            break;
         }
     } 
     for ($i = 1; $i < count($lista); $i++) {
@@ -29,43 +30,7 @@ function verificaKm($id, $distance, $lista)
             array_push($lugaresProximos, $i_km);
         }
     }
+
     return $lugaresProximos;
 }
 
-
-$teste = verificaKm(2, 40, $teste100);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* function codexworldGetDistanceOpt($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo)
-{
-    $rad = M_PI / 180;
-    //Calculate distance from latitude and longitude
-    $theta = $longitudeFrom - $longitudeTo;
-    $dist = sin($latitudeFrom * $rad) 
-        * sin($latitudeTo * $rad) +  cos($latitudeFrom * $rad)
-        * cos($latitudeTo * $rad) * cos($theta * $rad);
-
-    return acos($dist) / $rad * 60 *  1.853;
-} */

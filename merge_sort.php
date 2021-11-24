@@ -1,5 +1,4 @@
 <?php
-include('CSVs.php');
 function merge_sort(&$Array, $left, $right)
 {
     if ($left < $right) {
@@ -49,16 +48,3 @@ function merge(&$Array, $left, $mid, $right)
     }
 }
 
-$lista = $arquivo;
-$inicio = microtime(true);
-merge_sort($lista, 0, count($lista) - 1);
-$fim = microtime(true);
-echo $fim - $inicio;
-
-
-$guardar = fopen('merge.csv', 'w');
-
-foreach ($lista as $linha) {
-    fputcsv($guardar, $linha);
-}
-fclose($guardar);

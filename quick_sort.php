@@ -1,7 +1,4 @@
 <?php
-
-include('CSVs.php');
-
 function quicksort(&$lista, $left, $right)
 {
     if ($left < $right) {
@@ -29,16 +26,3 @@ function particao(&$lista, $left, $right)
     return $i;
 }
 
-$lista = $arquivo;
-$inicio = microtime(true);
-quicksort($lista, 0, count($lista) - 1);
-$fim = microtime(true);
-echo $fim - $inicio;
-
-
-$guardar = fopen('quicksort.csv', 'w');
-
-foreach ($lista as $linha) {
-    fputcsv($guardar, $linha);
-}
-fclose($guardar);

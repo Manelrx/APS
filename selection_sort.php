@@ -1,6 +1,4 @@
 <?php
-include('CSVs.php');
-
 function selection_sort($lista, $tipo_arquivo){
     $n = count($lista);
     for ($i = 0; $i < $n -1; $i++){
@@ -20,14 +18,3 @@ function selection_sort($lista, $tipo_arquivo){
     }
     return $lista;
 }
-$inicio = microtime(true);
-$teste = selection_sort($teste100, 4);
-$fim = microtime(true);
-echo $fim - $inicio;
-
-$guardar = fopen('selection.csv','w');
-
-foreach($teste as $linha){
-    fputcsv($guardar, $linha);
-}
-fclose($guardar); 
